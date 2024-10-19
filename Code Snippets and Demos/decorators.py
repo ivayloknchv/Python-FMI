@@ -98,7 +98,7 @@ def execution_time_decorator(f):
         star_time = time.perf_counter()
         res = f(*args, **kwargs)
         end_time= time.perf_counter()
-        print(f"Function {f.__name__} took {end_time-star_time} seconds to execute")
+        print(f"Function {f.__name__} took {end_time-star_time:.10f} seconds to execute")
         return res
     return wrapper
 
@@ -112,3 +112,6 @@ def sum_nums2(n):
     for i in range(1,n+1):
         res+=i
     return res
+
+num1=sum_nums1(1000000)
+num2=sum_nums2(1000000)
