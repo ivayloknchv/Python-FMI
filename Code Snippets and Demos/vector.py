@@ -15,6 +15,13 @@ class Vector:
         return sum(_ ** 2 for _ in self._coordinates()) ** 0.5
 
 
+    @staticmethod
+    def create_from_list(coordinates):
+        if len(coordinates) != 3:
+            return Vector(0, 0, 0)
+        return Vector(coordinates[0], coordinates[1], coordinates[2])
+
+
     def normalize(self):
         vector_length = self.length
         self.x /=  vector_length
