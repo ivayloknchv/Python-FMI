@@ -14,6 +14,9 @@ class SquarerIterator:
         self.begin = begin
         self.end = end
 
+    def __iter__(self):
+        return self
+
     def __next__(self):
         if self.begin <= self.end:
             ans = self.begin ** 2
